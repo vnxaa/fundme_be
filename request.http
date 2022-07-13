@@ -1,0 +1,46 @@
+//user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "address": "0xFABB0ac9d68B0B442314357272Ff202C5651694a"
+}
+
+###
+PUT http://localhost:5000/api/profile/update/62cbac6a65f7d1947a319f2b
+Content-Type: application/json
+
+{
+    "image":"https://firebasestorage.googleapis.com/v0/b/fundme-68982.appspot.com/o/bored-ape-nft-accidental-0-728-5490-8163-1646708401.jpg?alt=media&token=78359531-e203-44b6-9f1e-3f26b2600ba1",
+    "username": "vnxa01"
+}
+###
+GET http://localhost:5000/api/profile/62cbe61ddd46f28daf1a8fac
+
+//campaign
+###
+POST http://localhost:5000/api/campaign/create
+Content-Type: application/json
+
+{
+    "author":"0xFABB0ac9d68B0B442314357272Ff202C5651694a",
+    "title":"Bombcrypto",
+    "content":"The Bomb Crypto is a Bomb game experiences to NFT collectibles on the blockchain by BCOIN. Players can collect, fight monsters and trade them for real money.",
+    "image":"https://firebasestorage.googleapis.com/v0/b/fundme-68982.appspot.com/o/Bomb-Crypto.jpg?alt=media&token=76b1e703-664d-4801-a1c1-4d207be25642",
+    "whitepaper":"https://whitepaper.bombcrypto.io/",
+    "website":"https://bombcrypto.io/",
+    "target":20,
+    "endAt":"2022-08-11T06:58:05.190Z"
+}
+
+//nft
+###
+POST http://localhost:5000/api/nfts/upload
+Content-Type: application/json
+
+{
+    "image":"https://firebasestorage.googleapis.com/v0/b/fundme-68982.appspot.com/o/nft-bomb-1.png?alt=media&token=0742c4bf-0946-4554-8c8a-97cc53e264a2",
+    "belongToCampaign":"62cbe639dd46f28daf1a8fb4"
+}
+###
+GET http://localhost:5000/api/nfts/62cbe897f42e80b216950397
