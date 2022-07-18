@@ -16,8 +16,7 @@ router.put('/update/:id',async (req,res)=>{
             username:username,
         }
 
-      let profileUpdate=  await User.findOneAndUpdate(req.params.id,update,{new:true})
-
+      let profileUpdate=  await User.findByIdAndUpdate(req.params.id,update,{new:true})
       res.json({user: profileUpdate})
 
     } catch (error) {

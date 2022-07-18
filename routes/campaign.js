@@ -32,12 +32,16 @@ router.post('/create',async (req,res)=>{
     try {
         const campaingn = new Campaigns({author,title,content,image,whitepaper,website,target,endAt})
         await campaingn.save();
-        return res.status(200).json({success:true, campaing: campaingn})
+        return res.status(200).json({success:true, campaign: campaingn})
     } catch (error) {
         console.log(error)
 		res.status(500).json({ success: false, message: 'Internal server error' })
     }
 
+})
+router.get('/:id',async (req,res)=>{
+    let campaign = await Campaigns.findById(req.params.id);
+    res.json(campaign)
 })
 
 module.exports = router;
