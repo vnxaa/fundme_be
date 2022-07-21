@@ -32,14 +32,29 @@ Content-Type: application/json
     "endAt":"2022-08-11T06:58:05.190Z"
 }
 ###
-GET http://localhost:5000/api/campaign/62d4d4eb9da0f0033c34f788
+GET http://localhost:5000/api/campaign/62d505e0f47c149b645800a4
 //nft
 ###
 POST http://localhost:5000/api/nfts/upload
 Content-Type: application/json
+
 {
     "image":"https://firebasestorage.googleapis.com/v0/b/fundme-68982.appspot.com/o/nft-bomb-1.png?alt=media&token=0742c4bf-0946-4554-8c8a-97cc53e264a2",
     "belongToCampaign":"62cbe639dd46f28daf1a8fb4"
 }
 ###
-GET http://localhost:5000/api/nfts/62cbe897f42e80b216950397
+GET http://localhost:5000/api/nfts/62d8b5eb306d8be2eca4209a
+###
+//fund
+POST http://localhost:5000/api/fund/save
+Content-Type: application/json
+
+{
+    "sponsor":"abc",
+    "belongToCampaign":"62d505e0f47c149b645800a4",
+    "amount": 5
+}
+###
+GET http://localhost:5000/api/fund/62d505e0f47c149b645800a4
+###
+GET http://localhost:5000/api/fund/history/0xa0Ee7A142d267C1f36714E4a8F75612F20a79720/62d505e0f47c149b645800a4

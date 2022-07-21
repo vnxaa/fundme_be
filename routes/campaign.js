@@ -43,5 +43,11 @@ router.get('/:id',async (req,res)=>{
     let campaign = await Campaigns.findById(req.params.id);
     res.json(campaign)
 })
+router.get('/',async (req,res)=>{
 
+    let campaign = await Campaigns.find();
+
+    res.json(campaign)
+
+})
 module.exports = router;
