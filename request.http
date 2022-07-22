@@ -43,7 +43,7 @@ Content-Type: application/json
     "belongToCampaign":"62cbe639dd46f28daf1a8fb4"
 }
 ###
-GET http://localhost:5000/api/nfts/62d8b5eb306d8be2eca4209a
+GET http://localhost:5000/api/nfts/62d956b284d612c34c888601
 ###
 //fund
 POST http://localhost:5000/api/fund/save
@@ -58,3 +58,17 @@ Content-Type: application/json
 GET http://localhost:5000/api/fund/62d505e0f47c149b645800a4
 ###
 GET http://localhost:5000/api/fund/history/0xa0Ee7A142d267C1f36714E4a8F75612F20a79720/62d505e0f47c149b645800a4
+
+//rewards
+###
+POST http://localhost:5000/api/rewards/create
+Content-Type: application/json
+
+{
+    "nfts":"62d956b284d612c34c888601",
+    "belongToCampaign":"62d505e0f47c149b645800a4",
+    "amount":100,
+    "target": 5
+}
+###
+GET http://localhost:5000/api/rewards/62d505e0f47c149b645800a4

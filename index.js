@@ -6,7 +6,7 @@ const profileRouter = require('./routes/profile')
 const nftsRouter = require('./routes/nfts')
 const campaignRouter = require('./routes/campaign')
 const fundRouter = require('./routes/fund')
-
+const rwRouter = require('./routes/rewards')
 require('dotenv').config();
 
 const connectDB = async ()=>{
@@ -31,5 +31,8 @@ app.use('/api/profile',profileRouter)
 app.use('/api/nfts',nftsRouter)
 app.use('/api/campaign',campaignRouter)
 app.use('/api/fund',fundRouter)
+app.use('/api/rewards',rwRouter)
+
+
 const PORT=5000
 app.listen(PORT)
