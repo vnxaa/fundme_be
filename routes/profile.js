@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require('../models/User');
-
+const mongoose =  require("mongoose");
 //update profile
 router.put('/update/:id',async (req,res)=>{
     const {image,username} = req.body
@@ -25,8 +25,11 @@ router.put('/update/:id',async (req,res)=>{
     }
 })
 
-//get prpfile byt id
+//get profile byt id
 router.get('/:id',async (req,res)=>{
+     if( !mongoose.Types.ObjectId.isValid(req.params.id) ){
+        return res.status(400).json({ success: false, message: 'id is required' })
+    } 
     let user = await User.findById(req.params.id);
     res.json(user)
 })

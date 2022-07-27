@@ -5,7 +5,9 @@ const User = require('../models/User');
 
 router.post('/login',async (req,res)=>{
     const {address} = req.body
-
+    if(!address){
+        return res.status(400).json({ success: false, message: 'address is required' })
+    }
     try {
         const user = await User.findOne({address})
         

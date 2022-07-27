@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const mongoose =  require("mongoose");
 const NFT = require('../models/Nfts');
 
 router.post('/upload',async (req,res)=>{
@@ -21,7 +21,18 @@ router.post('/upload',async (req,res)=>{
     }
 })
 router.get('/:id',async (req,res)=>{
-    let nft = await NFT.findById(req.params.id);
-    res.json({nft})
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+        return res
+          .status(400)
+          .json({ success: false, message: "nftid is required" });
+      }
+      try {
+        let nft = await NFT.findById(req.params.id);
+        res.json({nft})
+      } catch (error) {
+        console.log(error)
+		res.status(500).json({ success: false, message: 'Internal server error' })
+      }
+   
 })
 module.exports = router;

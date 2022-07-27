@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const mongoose =  require("mongoose");
 const Campaigns = require('../models/Campaign');
 
 router.post('/create',async (req,res)=>{
@@ -40,9 +40,14 @@ router.post('/create',async (req,res)=>{
 
 })
 router.get('/:id',async (req,res)=>{
+
+    if( !mongoose.Types.ObjectId.isValid(req.params.id) ){
+        return res.status(400).json({ success: false, message: 'id is required' })
+    } 
     let campaign = await Campaigns.findById(req.params.id);
     res.json(campaign)
 })
+
 router.get('/',async (req,res)=>{
 
     let campaign = await Campaigns.find();

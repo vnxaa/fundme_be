@@ -9,6 +9,7 @@ Content-Type: application/json
 ###
 PUT http://localhost:5000/api/profile/update/62d3926d3f216d985868e4cc
 Content-Type: application/json
+
 {
     "image":"https://firebasestorage.googleapis.com/v0/b/fundme-68982.appspot.com/o/bored-ape-nft-accidental-0-728-5490-8163-1646708401.jpg?alt=media&token=78359531-e203-44b6-9f1e-3f26b2600ba1",
     "username": "vnxa01"
@@ -43,7 +44,7 @@ Content-Type: application/json
     "belongToCampaign":"62cbe639dd46f28daf1a8fb4"
 }
 ###
-GET http://localhost:5000/api/nfts/62d956b284d612c34c888601
+GET http://localhost:5000/api/nfts/62da0acaf67eb11d4f2be8b4
 ###
 //fund
 POST http://localhost:5000/api/fund/save
@@ -71,4 +72,6 @@ Content-Type: application/json
     "target": 5
 }
 ###
-GET http://localhost:5000/api/rewards/62d505e0f47c149b645800a4
+GET http://localhost:5000/api/rewards/62debe7f04727af30960a7ce
+###
+PUT  http://localhost:5000/api/rewards/mint/62debeba04727af30960a802
