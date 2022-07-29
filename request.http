@@ -58,8 +58,7 @@ Content-Type: application/json
 ###
 GET http://localhost:5000/api/fund/62d505e0f47c149b645800a4
 ###
-GET http://localhost:5000/api/fund/history/0xa0Ee7A142d267C1f36714E4a8F75612F20a79720/62d505e0f47c149b645800a4
-
+GET http://localhost:5000/api/fund/history/0xd174ca3011bA9834971345A09F6e7C4D89b0b722/62dfaebb330fe01b3e956f6a
 //rewards
 ###
 POST http://localhost:5000/api/rewards/create
